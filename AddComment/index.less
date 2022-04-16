@@ -1,0 +1,76 @@
+.add-comment {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 30px;
+  background: #fff;
+  z-index: 2;
+
+  .box {
+    background: #D2D4D7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+
+    // ---------------------- textarea时，使用的是这些样式，但是样式还有问题，比如换行时框不增高，输入字符才会增高
+    // textarea样式开始
+    .v-textarea {
+      position: relative;
+      width: calc(100% - 75px);
+      background-color: #fff;
+      border-radius: 5px;
+
+      >textarea {
+        resize: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 0;
+        height: 100%;
+      }
+
+      >div {
+        display: block;
+        visibility: hidden;
+        margin: 0;
+        /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+        -ms-overflow-style: none;
+        /*火狐下隐藏滚动条*/
+        scrollbar-width: none;
+      }
+
+      .add-comment-input-item-box {
+        display: block;
+        box-sizing: border-box;
+        padding: 10px 5px 10px 5px;
+        min-height: 36px;
+        max-height: 90px;
+        width: 100%;
+        overflow: auto;
+        border-radius: 5px;
+        // 不让复制
+        // -webkit-user-select: none;
+        // -moz-user-select: none;
+        // -ms-user-select: none;
+        // user-select: none;
+      }
+    }
+
+    .add-comment-input-item-box::-webkit-scrollbar {
+      width: 0px
+    }
+
+    .am-button {
+      background: #D2B45D;
+      border-radius: 5px;
+      width: 60px;
+      height: 32px;
+      line-height: 32px;
+      color: #fff;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+  }
+}
